@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alvin and the Chipmunks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <script type="text/javascript">
+            // play music when page loads
+            window.onload = function() {
+                var audio = new Audio('C:\Users\Luke\OneDrive - stevens.edu\Desktop\Chipmunks\music.mp3');
+                audio.play();
+            }
+    
+            
+        </script>
+	    <style type="text/css">
+		    /* styling for Flipgrid */
+		    .flipgrid {
+			    display: flex;
+			    flex-wrap: wrap;
+		    }
+		    .flipgrid img {
+			    width: 200px;
+			    height: 200px;
+			    object-fit: cover;
+			    margin: 10px;
+			    cursor: pointer;
+			    transition: transform 0.3s ease-in-out;
+		    }
+		    .flipgrid img:hover {
+			    transform: scale(2.1);
+		}
+	    </style>
+        <nav>
+            <ul>
+                <li><a href="#history">History</a></li>
+                <li><a href="#fun-facts">Fun Facts</a></li>
+                <li><a href="#simonette">Simonette</a></li>
+                <li><a href="#flipgrid">Flipgrid</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="history">
+            <h2>History of Alvin and the Chipmunks</h2>
+            <p>Insert history content here</p>
+        </section>
+        <section id="fun-facts">
+            <h2>Fun Facts about Alvin and the Chipmunks</h2>
+            <p>Insert fun facts content here</p>
+        </section>
+        <section id="simonette">
+            <h2>Simonette</h2>
+            <p>Insert Simonette content here</p>
+        </section>
+        <section id="flipgrid">
+            <h1>Alvin and the Chipmunks Flipgrid</h1>
+	        <p>Click on a picture to see it in full-size!</p>
+	        <div class="flipgrid">
+		        <img src="alvin1.jpg" onclick="window.open('alvin1.jpg', '_blank')">
+		        <img src="alvin2.png" onclick="window.open('alvin2.jpg', '_blank')">
+		        <img src="alvin3.jpg" onclick="window.open('alvin3.jpg', '_blank')">
+		        <img src="alvin4.jpg" onclick="window.open('alvin4.jpg', '_blank')">
+		        <img src="chipmunks1.jpg" onclick="window.open('chipmunks1.jpg', '_blank')">
+		        <img src="chipmunks2.jpg" onclick="window.open('chipmunks2.jpg', '_blank')">
+		        <img src="chipmunks3.jpg" onclick="window.open('chipmunks3.jpg', '_blank')">
+		        <img src="chipmunks4.jpg" onclick="window.open('chipmunks4.jpg', '_blank')">
+	            </div>
+        </section>
+    </main>
+</body>
+</html>

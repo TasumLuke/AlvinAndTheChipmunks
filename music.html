@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Music</title>
+	<script>
+		var audio = null;
+		function initAudio() {
+			audio = document.getElementById("myAudio");
+		}
+		function playMusic() {
+			if (audio.paused) {
+				audio.play();
+			} else {
+				audio.pause();
+			}
+		}
+	</script>
+	<style>
+		button {
+			font-size: 20px;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body onload="initAudio()">
+	<h1>My Music</h1>
+	<button onclick="playMusic()">Play/Pause</button>
+	<audio id="myAudio" src="music.mp3" autoplay></audio>
+</body>
+</html>

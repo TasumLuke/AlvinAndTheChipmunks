@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Alvin and Chipmunks</title>
+
+    <script>
+		var audio = null;
+		function initAudio() {
+			audio = document.getElementById("myAudio");
+		}
+		function playMusic() {
+			if (audio.paused) {
+				audio.play();
+			} else {
+				audio.pause();
+			}
+		}
+	</script>
+	<style>
+		button {
+			font-size: 20px;
+			padding: 10px;
+		}
+	</style>
+
+    <!-- google fonts cdn link  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+    <title>Alvin and the Chipmunks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>    
+    <header>
+        <script type="text/javascript">
+            // play music when page loads
+            window.onload = function() {
+                var audio = new Audio('C:\Users\Luke\OneDrive - stevens.edu\Desktop\Chipmunks\music.mp3');
+                audio.play();
+            }
+    
+            
+        </script>
+	    <style type="text/css">
+		    /* styling for Flipgrid */
+		    .flipgrid {
+			    display: flex;
+			    flex-wrap: wrap;
+		    }
+		    .flipgrid img {
+			    width: 200px;
+			    height: 200px;
+			    object-fit: cover;
+			    margin: 10px;
+			    cursor: pointer;
+			    transition: transform 0.3s ease-in-out;
+		    }
+		    .flipgrid img:hover {
+			    transform: scale(2.1);
+		}
+	    </style>
+
+        <div id="menu" class="fas fa-bars">            
+        </div> 
+        <a href="#" class="logo">
+            <img src="logo.png" alt="icon">
+        </a>
+      
+    </h3>Alvin & Chipmunks Fandom</h3>
+        <nav class="navbar">
+            <ul>
+                <li><a class="active" href="#home" onclick="playMusic()">home</a></li>
+                <li><a href="#history" onclick="playMusic()">History</a></li>
+                <li><a href="#fun-facts" onclick="playMusic()">Fun Facts</a></li>
+                <li><a href="#simonette" onclick="playMusic()">Simonette</a></li>
+                <li><a href="#news" onclick="playMusic()">Latest News</a></li>
+                <li><a href="#flipgrid" onclick="playMusic()">Flipgrid</a></li>
+                <li><a href="#contact" onclick="playMusic()">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div id="login" onclick="playMusic()" class="fas fa-user-circle"></div>
+    </header>
+
+    <!-- login form  -->
+
+    <div class="login-form">
+    <form id="login-form" method="post">
+        <h3>login</h3>
+        <input type="email" placeholder="username" class="box" name="username" required>
+        <input type="password" placeholder="password" class="box" name="password" required>
+        <p>forget password? <a href="#">click here</a></p>
+        <p>don't have an account? <a href="#">register now</a></p>
+        <input type="submit" class="btn" value="login">
+        <i class="fas fa-times"></i>
+    </form>
+
+    <form id="register-form" method="post" style="display: none;">
+        <h3>register</h3>
+        <input type="email" placeholder="username" class="box" name="username" required>
+        <input type="password" placeholder="password" class="box" name="password" required>
+        <input type="password" placeholder="confirm password" class="box" name="confirm_password" required>
+        <input type="submit" class="btn" value="register">
+        <i class="fas fa-times"></i>
+    </form>
+    </div>
+
+        <section class="home" id="home">
+
+            <h1>Alvin & the Chipmunks FanCommunity</h1>
+            <h2>~Luke</h2>
+            <a href="#about"><button onclick="playMusic()" loop="true" class="btn" color="white">Welcome to the Alvin and Chipmunks fan page! Here, you'll find everything you need to know about the iconic animated musical group that has captured the hearts of fans for generations. From their history and fun facts to their relationships and appearances on popular platforms like Flipgrid, we've got it all covered. Join us as we celebrate the talented trio and their unique brand of humor, music, and mischief. Whether you're a long-time fan or just discovering Alvin and the Chipmunks for the first time, this page is the perfect place to share your love for these lovable characters and connect with other fans around the world.</button></a>
+            <audio id="myAudio" src="music.mp3" autoplay></audio>
+            <div class="shape"></div>
+
+        </section>
+
+        <script>
+            var homeElement = document.getElementById('home');
+            var images = ['image1.jpg', 'image2.jpg'];
+            var currentImage = 0;
+    
+            function changeBackground() {
+            homeElement.style.backgroundImage = `url(${images[currentImage]})`;
+            currentImage = (currentImage + 1) % images.length;
+            }
+    
+            setInterval(changeBackground, 3000);
+        </script>
+
+        <section class="about" id="about">
+
+            <div class="image">
+                <img src="jeanette.jpg" alt="">
+                <img src="original1.png" alt="">
+                <img src="original2.png" alt="">
+                <img src="original3.jpg" alt="">
+                <img src="original4.jpg" alt="">
+                <img src="original5.png" alt="">
+                <img src="original6.jpg" alt="">
+                <img src="original7.jpg" alt="">
+                <img src="original8.jpg" alt="">
+
+            </div>
+
+            <div class="content">
+                <h3>History of Alvin and the Chipmunks</h3>
+                <p>Alvin and the Chipmunks is a musical group consisting of three anthropomorphic chipmunks named Alvin, Simon, and Theodore. The concept was created by Ross Bagdasarian Sr. in 1958, who also provided the voices for the characters and wrote many of their hit songs.</p>
+                <p>The story of Alvin and the Chipmunks began when Bagdasarian was on a long car trip and noticed that the pitch of his voice changed when he spoke into a fan. This gave him the idea to create characters with high-pitched voices, and he recorded himself singing several popular songs at a slow speed, then played them back at a higher speed to create the signature chipmunk sound.</p>
+                <p>The first song Bagdasarian released under the name "David Seville and the Chipmunks" was "The Chipmunk Song (Christmas Don't Be Late)" in 1958. The song was a huge success, reaching #1 on the Billboard Hot 100 chart and earning Bagdasarian three Grammy Awards.</p>
+                <p>Following the success of the first single, Bagdasarian created a cartoon series based on the Chipmunks, which aired from 1961 to 1962. The show followed the misadventures of Alvin, Simon, and Theodore as they tried to make it in the music industry with the help of their human friend and manager, Dave Seville (a fictionalized version of Bagdasarian himself).</p>
+                <p>In the years that followed, the Chipmunks remained popular, releasing numerous albums and appearing in several more TV shows and movies. Bagdasarian passed away in 1972, but his son Ross Bagdasarian Jr. continued the family legacy by taking over the voices of the characters and producing new Chipmunks content.</p>
+                <p>In 2007, a new generation was introduced to the Chipmunks when a live-action/CGI movie was released, featuring Jason Lee as Dave Seville and the voices of Justin Long, Matthew Gray Gubler, and Jesse McCartney as Alvin, Simon, and Theodore, respectively. The film was a box office success and spawned several sequels.</p>
+                <p>Today, Alvin and the Chipmunks remain beloved by fans of all ages, with their classic songs and zany adventures continuing to entertain audiences around the world.</p>
+                
+            </div>
+
+            <div class="fans">
+                <h1>_________</h1>
+                <h2>Why do Fans Love them?</h2>
+                <p>Alvin and the Chipmunks have been entertaining audiences for over six decades, and their fans are a diverse group of people of all ages and backgrounds. Here are some of the reasons why fans love the Chipmunks:</p>
+                
+                <ul>
+                    <li>Nostalgia: Many fans grew up listening to the Chipmunks' music or watching their cartoons, and they have fond memories of those times. For these fans, the Chipmunks represent a piece of their childhood, and listening to their music or watching their shows brings back happy memories.</li>
+                    <li>Humor: The Chipmunks are known for their wacky antics and mischievous behavior, which many fans find amusing. Whether they're getting into trouble with Dave Seville or causing chaos on their own, the Chipmunks' antics always bring a smile to their fans' faces.</li>
+                    <li>Music: The Chipmunks' music has always been a big part of their appeal, and many fans love their catchy tunes and upbeat melodies. From their early hits like "The Chipmunk Song" to their more recent tracks, the Chipmunks have a wide variety of music that appeals to fans of all ages.</li>
+                    <li>Characters: Fans love the characters of Alvin, Simon, and Theodore, as well as their human friend Dave Seville. Each of the Chipmunks has their own unique personality, with Alvin being the mischievous troublemaker, Simon the brainy one, and Theodore the lovable goofball. Dave Seville acts as the responsible adult who tries to keep the Chipmunks in line, but often gets caught up in their shenanigans.</li>
+                    <li>Family-Friendly Entertainment: The Chipmunks have always been known for their family-friendly entertainment, which makes them a hit with parents and kids alike. Many parents who grew up with the Chipmunks now share their love of the characters with their own children, creating a new generation of fans.</li>
+                </ul>
+
+                <p>Overall, Alvin and the Chipmunks have a devoted fanbase that continues to grow and evolve over time. Whether they're listening to the classic tunes or watching the latest movie, fans of the Chipmunks are sure to be entertained by these lovable characters for years to come.</p>
+            </div>
+
+            <div class="fanbase">
+                <p>The Alvin and the Chipmunks fan community is a diverse group of people of all ages and backgrounds who share a common love for the lovable chipmunk trio and their music. They connect with each other through various online forums, social media groups, and fan websites.</p>
+                <p>________</p>
+                <h2>What do we do?</h2>
+                <ul>
+                  <li>Discussing their favorite Chipmunks songs and albums</li>
+                  <li>Sharing fan art and fan fiction</li>
+                  <li>Organizing and attending Alvin and the Chipmunks-themed events, such as cosplay contests, trivia nights, and sing-alongs</li>
+                  <li>Creating and sharing Chipmunks-related memes and jokes</li>
+                  <li>Sometimes Shipping the Chipettes and the CHipmunks</li>
+                  <li>Debating the merits of different iterations of the Chipmunks, such as the classic animated series, the live-action movies, and the CGI-animated reboot</li>
+                </ul>
+                <p>________</p>
+            </div>
+            <div class="about-container">
+                <div class="statement">
+                    <h2>Inclusivity</h2>
+                </div>
+                <div class="diversity">
+                    <img src="diversity.jpg" alt="Diversity image">
+                    <p>The Alvin and the Chipmunks fan community is an inclusive and welcoming space, where fans of all ages, genders, and backgrounds can come together to share their love for the Chipmunks. They celebrate diversity and encourage respectful discourse, recognizing that everyone has their own unique perspective on the Chipmunks and their music.</p>
+                    <p>The Alvin and the Chipmunks fan community is a vibrant and passionate group of fans who continue to support and celebrate the legacy of these iconic characters. Whether they're singing along to "The Chipmunk Song" or debating the best version of Alvin, Simon, and Theodore, the fan community is a testament to the enduring appeal of these lovable chipmunks.</p>
+                </div>
+              </div>
+              
+        </section>
+
+        <section class="facts" id="facts">
+            <div class="heading">
+                <h2>Fun Facts about Alvin and the Chipmunks</h2>
+            </div>
+            <div class="fun-facts" id="fun-facts">
+                <ol>
+                    <li>The Chipettes are named Brittany, Jeanette, and Eleanor. Their names were chosen to sound similar to the names of famous singers: Britney Spears, Janet Jackson (maybe it was after your name Jen), and Eleanor Roosevelt.</li>
+                    <li>Alvin and the Chipmunks have had several hit songs, including "The Chipmunk Song (Christmas Don't Be Late)" and "Bad Day." The Chipettes have also had popular songs, including "Girls Just Want to Have Fun" and "Hot N Cold."</li>
+                    <li>Alvin and the Chipmunks have been featured in several TV shows and movies over the years, including their own animated series and several live-action movies.</li>
+                    <li>Alvin and the Chipmunks have won three Grammy Awards over the years.</li>
+                    <li>The Chipmunks and the Chipettes have their own star on the Hollywood Walk of Fame.</li>
+                    <li>The Chipmunks were the first animated characters to have a balloon in the Macy's Thanksgiving Day Parade.</li>
+                    <li>Alvin and the Chipmunks have been translated into over 25 languages and have fans all over the world.</li>
+                    <li>The Chipmunks are named after three executives at their record label: Alvin Bennett, Simon Waronker, and Theodore Keep.</li>
+                    <li>The chipettes and the chipmunks fell in love during the 2nd movie.</li>
+                    <li>In "Alvinnn!!! And the Chipmunks" in "Saving Simon" Jeanette asks Simon if he could help her do a crossword puzzle , and when he finds a word she says, " You're the best!" and he "blushes". Then, still in that episode , when Simon finished her crossword puzzle , Jeanette gives him a kiss.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="ships">
+            <div class="heading">
+                <h2>Ships</h2>
+                <p></p>
+            </div>
+            <div><h3>Alvitanny</h3></div>
+            <div><h3>Simonette</h3></div>
+            <div><h3>Theonor</h3></div>
+            <p>Insert Simonette content here</p>
+        </section>
+
+        <section id="flipgrid">
+            <h1>Alvin and the Chipmunks Flipgrid</h1>
+	        <p>Click on a picture to see it in full-size!</p>
+	        <div class="flipgrid">
+		        <img src="alvin1.jpg" onclick="window.open('alvin1.jpg', '_blank')">
+		        <img src="alvin2.png" onclick="window.open('alvin2.jpg', '_blank')">
+		        <img src="alvin3.jpg" onclick="window.open('alvin3.jpg', '_blank')">
+		        <img src="alvin4.jpg" onclick="window.open('alvin4.jpg', '_blank')">
+		        <img src="chipmunks1.jpg" onclick="window.open('chipmunks1.jpg', '_blank')">
+		        <img src="chipmunks2.jpg" onclick="window.open('chipmunks2.jpg', '_blank')">
+		        <img src="chipmunks3.jpg" onclick="window.open('chipmunks3.jpg', '_blank')">
+		        <img src="chipmunks4.jpg" onclick="window.open('chipmunks4.jpg', '_blank')">
+	            </div>
+        </section>
+
+        <section class="contact" id="contact">
+
+            <h1 class="heading">contact us</h1>
+            
+            <div class="row">
+            
+                <form action="">
+                    <input type="text" placeholder="full name" class="box">
+                    <input type="email" placeholder="your email" class="box">
+                    <input type="password" placeholder="your password" class="box">
+                    <input type="number" placeholder="your number" class="box">
+                    <textarea name="" id="" cols="30" rows="10" class="box address" placeholder="your address"></textarea>
+                    <input type="submit" class="btn" value="send now">
+                </form>
+            
+            </div>
+            
+        </section>
+
+        <div class="footer">
+
+            <div class="box-container">
+        
+                <div class="box">
+                    <h3>A Global Community</h3>
+                    <a href="#">Canada</a>
+                    <a href="#">USA</a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                </div>
+        
+                <div class="box">
+                    <h3>Navigation</h3>
+                    <a href="https://www.youtube.com/results?search_query=chipmunk+music">Chipmunk Music</a>
+                    <a href="https://www.alvinandthechipmunks.com/">Chipmunk Official</a>
+                    <a href="https://www.youtube.com/channel/UCQr_k5Dn5HsC2okDjOqANMQ">Follow Me</a>
+                    <a href="https://alvin.fandom.com/wiki/Category:Fan_Art">Fan Art</a>
+                    <a href="#">contact</a>
+                </div>
+        
+                <div class="box">
+                    <h3>contact info</h3>
+                    <p> <i class="fas fa-map-marker-alt"></i> NJ, United States </p>
+                    <p> <i class="fas fa-envelope"></i> tasumrocky@gmail.com </p>
+                    <p> <i class="fas fa-phone"></i> +1 516-707-8036 </p>
+                </div>
+        
+            </div>
+        
+            <h1 class="credit">created by <a href="#">Luke</a> all rights reserved. </h1>
+        
+        </div>
+        
+        <!-- footer section ends -->
+    
+</body>
+
+<script>
+	function playMusic() {
+		var audio = document.getElementById("myAudio");
+		audio.play();
+	}
+</script>
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="script.js"></script>
+
+</html>
