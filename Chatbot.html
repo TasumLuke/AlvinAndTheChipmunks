@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alvin and the Chipmunks Chatbot</title>
+  <style>
+    /* Set up the chat button */
+    .chat-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #008CBA;
+      color: white;
+      border-radius: 50%;
+      padding: 20px;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    /* Set up the chat popup */
+    .chat-popup {
+      position: fixed;
+      bottom: 70px;
+      right: 20px;
+      width: 300px;
+      height: 500px;
+      background-color: white;
+      border: 1px solid #ccc;
+      z-index: 1;
+      display: none;
+    }
+
+    /* Set up the chat header */
+    .chat-header {
+      background-color: #008CBA;
+      color: white;
+      padding: 10px;
+      font-size: 18px;
+    }
+
+    /* Set up the chat body */
+    .chat-body {
+      padding: 10px;
+      height: 400px;
+      overflow-y: scroll;
+    }
+
+    /* Set up the chat input */
+    .chat-input {
+      width: 100%;
+      border: none;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    /* Set up the chat button */
+    .chat-send {
+      background-color: #008CBA;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Set up the logo -->
+  <img src="https://example.com/logo.png" alt="Logo" width="100">
+
+  <!-- Set up the chat button -->
+  <div class="chat-button">
+    <span style="font-size:30px;cursor:pointer" onclick="openChat()">&#9776;</span>
+  </div>
+
+  <!-- Set up the chat popup -->
+  <div class="chat-popup" id="chat-popup">
+    <div class="chat-header">
+      <img src="https://example.com/face.png" alt="Face" width="50">
+      Alvin and the Chipmunks Chatbot
+      <span style="float:right;cursor:pointer" onclick="closeChat()">&times;</span>
+    </div>
+    <div class="chat-body" id="chat-body">
+      Hi! How can I help you today?
+    </div>
+    <input type="text" placeholder="Type your message..." class="chat-input" id="chat-input">
+    <button class="chat-send" onclick="sendMessage()">Send</button>
+  </div>
+
+  <!-- Load in the necessary packages -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/string-similarity/umd/string-similarity.min.js"></script>
+
+    <!-- Set up the chatbot -->
+    <script>
+      // Define a function to get data from the Google Sheet
+      function getData(range) {
+        return axios.get(`https://sheets.googleapis.com/v4/spreadsheets/1ZBgsXVrjxq0V64A1ftyOnWijMZs_w89h-K4pLKzI_B0/values/${range}?key=AIzaSyAnXzV7L4q9P2Pz3ZV06cybpTnOc5Qnlms`)
+          .then(response => {
+            const rows = response.data.values;
+            return rows;
+          });
+      }
+  
+      // Define a function to handle incoming messages
+      function handleMessage(message) {
+        // Display the user's message in the chat
+        const chatBody = document.getElementById('chat-body');
+        const userMessage = document.createElement('div');
+        userMessage.innerHTML = `
+          <div style="text-align: right;">
+            <strong>You:</strong> ${message}
+          </div>
+        `;
+        chatBody.appendChild(userMessage);
+  
+        // Check if the message is a question about the chipmunks
+        const questionList = ['Who are Alvin and the Chipmunks?', 'What is the history of Alvin and the Chipmunks?', 'What are the names of the Chipmunks?', 'What is the latest Alvin and the Chipmunks movie?'];
+        const bestMatch = stringSimilarity.findBestMatch(message, questionList).bestMatch;
+        if (bestMatch.rating > 0.5) {
+          // Get the answer from the Google Sheet
+          getData(`Sheet1!B${bestMatchIndex + 1}:C${bestMatchIndex + 1}`)
+            .then(rows => {
+              const answer = rows[0][1];
+  
+              // Display the answer in the chat
+              const chatBody = document.getElementById('chat-body');
+              const botMessage = document.createElement('div');
+              botMessage.innerHTML = `
+                <div style="text-align: left;">
+                  <strong>Chatbot:</strong> ${answer}
+                </div>
+              `;
+              chatBody.appendChild(botMessage);
+            })
+            .catch(error => {
+              console.error(error);
+            });
+        } else {
+          // Display a default message if the message is not a question about the chipmunks
+          const chatBody = document.getElementById('chat-body');
+          const botMessage = document.createElement('div');
+          botMessage.innerHTML = `
+            <div style="text-align: left;">
+              <strong>Chatbot:</strong> Sorry, I don't understand. Could you try asking another question?
+            </div>
+          `;
+          chatBody.appendChild(botMessage);
+        }
+      }
+  
+      // Define a function to send a message
+      function sendMessage() {
+        const chatInput = document.getElementById('chat-input');
+        const message = chatInput.value.trim();
+        if (message !== '') {
+          handleMessage(message);
+          chatInput.value = '';
+        }
+      }
+  
+      // Define a function to open the chat popup
+      function openChat() {
+        const chatPopup = document.getElementById('chat-popup');
+        chatPopup.style.display = 'block';
+      }
+  
+      // Define a function to close the chat popup
+      function closeChat() {
+        const chatPopup = document.getElementById('chat-popup');
+        chatPopup.style.display = 'none';
+      }
+  
+      // Greet the user
+      handleMessage('Hi! How can I help you today?');
+    </script>
+  </body>
+</html>
+  
